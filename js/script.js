@@ -1,15 +1,13 @@
 'use strict';
 
 let numberOfFilms;
-
 const start = function() {
     numberOfFilms = +prompt("Сколько фильмов вы посмотрели на английском языке?", "");
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
         numberOfFilms = +prompt("Сколько фильмов вы посмотрели на английском языке?", "");
     }
 };
-
-start();
+start(); 
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -23,10 +21,7 @@ function showMyDB(hidden) {
     if (!hidden) {
         console.log(personalMovieDB);
     }
-};
-
-showMyDB(personalMovieDB.private);
-
+}
 
 function rememberMovie() {
     for (let i = 0; i < 2; i++) {
@@ -40,8 +35,6 @@ function rememberMovie() {
     }
 }
 
-rememberMovie();
-
 function detectPersonalLevel() {
     if (personalMovieDB.count < 10) {
         alert("Просмотрено довольно мало фильмов");
@@ -54,8 +47,6 @@ function detectPersonalLevel() {
     }
 }
 
-detectPersonalLevel();
-
 function writeYourGenres() {
     let genre;
     for(let i = 0; i < 3; i++){
@@ -65,6 +56,9 @@ function writeYourGenres() {
         }
         personalMovieDB.genres[i] = genre;
     }
-};
+}
 
-writeYourGenres();
+// showMyDB(personalMovieDB.private);
+// rememberMovie();
+detectPersonalLevel();
+// writeYourGenres();
